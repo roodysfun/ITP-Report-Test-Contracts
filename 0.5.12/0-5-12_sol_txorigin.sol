@@ -9,7 +9,7 @@ contract TxUserWallet {
     }
 
     function transferTo(address payable dest, uint amount) public {
-        require(msg.sender == owner);
+        require(tx.origin == owner);
         dest.transfer(amount);
     }
 }
